@@ -18,6 +18,7 @@ public class DuAnQuanLyTiemThuoc {
         System.out.println("hello");
         System.out.println("Commit xong push lên github");
         System.out.println("Sửa lại");
+        System.out.println("Sửa lại");
     }
     
 }
