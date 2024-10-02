@@ -86,6 +86,11 @@ public class DangNhap_GUI extends javax.swing.JFrame {
         quenMatKhau_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 15)); // NOI18N
         quenMatKhau_lbl.setForeground(new java.awt.Color(116, 116, 116));
         quenMatKhau_lbl.setText("Quên mật khẩu?");
+        quenMatKhau_lbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                quenMatKhau_lblMouseClicked(evt);
+            }
+        });
         jPanel1.add(quenMatKhau_lbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 120, -1));
 
         title_lbl.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\title.png")); // NOI18N
@@ -113,6 +118,10 @@ public class DangNhap_GUI extends javax.swing.JFrame {
     private void dangNhap_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dangNhap_btnActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_dangNhap_btnActionPerformed
+
+    private void quenMatKhau_lblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_quenMatKhau_lblMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quenMatKhau_lblMouseClicked
 
     /**
      * @param args the command line arguments
