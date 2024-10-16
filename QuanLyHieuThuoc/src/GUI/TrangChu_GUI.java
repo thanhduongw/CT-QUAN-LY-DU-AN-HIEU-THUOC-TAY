@@ -11,7 +11,7 @@ import javax.swing.JFrame;
  * @author nguye
  */
 public class TrangChu_GUI extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form TrangChu_GUI
      */
@@ -29,6 +29,8 @@ public class TrangChu_GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        mainPanel = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         trangChu_btn = new javax.swing.JButton();
@@ -45,10 +47,15 @@ public class TrangChu_GUI extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         tonKho_btn1 = new javax.swing.JButton();
         tonKho_btn2 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        mainPanel.setLayout(new java.awt.BorderLayout());
+
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\BG.png")); // NOI18N
+        mainPanel.add(jLabel1, java.awt.BorderLayout.PAGE_START);
+
+        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         jPanel1.setBackground(new java.awt.Color(72, 160, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -71,7 +78,7 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 
         banThuoc_btn1.setBackground(new java.awt.Color(72, 160, 255));
         banThuoc_btn1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        banThuoc_btn1.setForeground(new java.awt.Color(255, 255, 255));
+        banThuoc_btn1.setForeground(new java.awt.Color(72, 160, 255));
         banThuoc_btn1.setText("Bán thuốc");
         banThuoc_btn1.setBorder(null);
         banThuoc_btn1.setBorderPainted(false);
@@ -252,16 +259,21 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 260, 100));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\BG.png")); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 0, -1, -1));
+        getContentPane().add(jPanel1, java.awt.BorderLayout.WEST);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void trangChu_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_trangChu_btnActionPerformed
         // TODO add your handling code here:
+        // Xóa các thành phần cũ trong mainPanel
+        mainPanel.removeAll();
+
+        mainPanel.add(jLabel1);
+
+        // Cập nhật lại giao diện
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }//GEN-LAST:event_trangChu_btnActionPerformed
 
     private void phieuXuat_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phieuXuat_btnActionPerformed
@@ -278,6 +290,16 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 
     private void khachHang_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khachHang_btnActionPerformed
         // TODO add your handling code here:
+        // Xóa các thành phần cũ trong mainPanel
+        mainPanel.removeAll();
+
+        // Tạo và thêm KhachHang_GUI vào mainPanel
+        KhachHang_GUI khachHangPanel = new KhachHang_GUI();
+        mainPanel.add(khachHangPanel);
+
+        // Cập nhật lại giao diện
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }//GEN-LAST:event_khachHang_btnActionPerformed
 
     private void thuoc_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thuoc_btnActionPerformed
@@ -298,6 +320,16 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 
     private void nhanVien_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nhanVien_btnActionPerformed
         // TODO add your handling code here:
+        // Xóa các thành phần cũ trong mainPanel
+        mainPanel.removeAll();
+
+        // Tạo và thêm NhanVien_GUI vào mainPanel
+        NhanVien_GUI nhanVienPanel = new NhanVien_GUI();
+        mainPanel.add(nhanVienPanel);
+
+        // Cập nhật lại giao diện
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }//GEN-LAST:event_nhanVien_btnActionPerformed
 
     private void thongKe_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thongKe_btnActionPerformed
@@ -353,6 +385,7 @@ public class TrangChu_GUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel_TonKho;
     private javax.swing.JButton khachHang_btn;
+    private javax.swing.JPanel mainPanel;
     private javax.swing.JButton nhanVien_btn;
     private javax.swing.JButton phieuNhap_btn;
     private javax.swing.JButton phieuXuat_btn;
