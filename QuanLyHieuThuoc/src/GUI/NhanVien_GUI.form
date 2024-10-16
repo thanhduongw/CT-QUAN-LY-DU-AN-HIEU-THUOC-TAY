@@ -55,14 +55,12 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jLabel8" max="32767" attributes="0"/>
-                                  <Component id="jLabel6" pref="300" max="32767" attributes="0"/>
-                                  <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jLabel2" alignment="0" pref="300" max="32767" attributes="0"/>
-                                  <Component id="jComboBox1" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                                  <Component id="jComboBox2" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel8" max="32767" attributes="0"/>
+                              <Component id="jLabel6" pref="300" max="32767" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jLabel2" alignment="0" pref="300" max="32767" attributes="0"/>
+                              <Component id="jComboBox1" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              <Component id="jComboBox2" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
                               <Component id="jTextField2" pref="400" max="32767" attributes="0"/>
                               <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
                           </Group>
@@ -476,6 +474,7 @@
               </Properties>
               <Events>
                 <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="tim_txtFocusGained"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tim_txtActionPerformed"/>
               </Events>
             </Component>
             <Component class="javax.swing.JButton" name="them_txt">

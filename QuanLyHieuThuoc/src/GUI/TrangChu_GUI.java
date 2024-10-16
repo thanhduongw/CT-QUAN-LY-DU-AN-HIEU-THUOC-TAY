@@ -304,6 +304,16 @@ public class TrangChu_GUI extends javax.swing.JFrame {
 
     private void thuoc_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_thuoc_btnActionPerformed
         // TODO add your handling code here:
+        // Xóa các thành phần cũ trong mainPanel
+        mainPanel.removeAll();
+
+        // Tạo và thêm KhachHang_GUI vào mainPanel
+        Thuoc_GUI thuocPanel = new Thuoc_GUI();
+        mainPanel.add(thuocPanel);
+        
+        // Cập nhật lại giao diện
+        mainPanel.revalidate();
+        mainPanel.repaint();
     }//GEN-LAST:event_thuoc_btnActionPerformed
 
     private void tonKho_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tonKho_btnActionPerformed
