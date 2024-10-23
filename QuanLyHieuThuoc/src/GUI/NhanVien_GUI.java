@@ -55,12 +55,6 @@ public class NhanVien_GUI extends javax.swing.JPanel {
         ngayVaoLam_lbl = new javax.swing.JLabel();
         ngaySinh_date = new com.toedter.calendar.JDateChooser();
         ngayVaoLam_date = new com.toedter.calendar.JDateChooser();
-        quanLyNhanVien_lbl = new javax.swing.JLabel();
-        lastPanel = new javax.swing.JPanel();
-        them_btn = new javax.swing.JButton();
-        sua_btn = new javax.swing.JButton();
-        tim_txt = new javax.swing.JTextField();
-        them_txt = new javax.swing.JButton();
         east = new javax.swing.JPanel();
         quanComboBox = new javax.swing.JComboBox<>();
         tinhThanh_lbl = new javax.swing.JLabel();
@@ -69,6 +63,12 @@ public class NhanVien_GUI extends javax.swing.JPanel {
         phuongComboBox = new javax.swing.JComboBox<>();
         phuongXa_lbl = new javax.swing.JLabel();
         diaChi_lbl = new javax.swing.JLabel();
+        quanLyNhanVien_lbl = new javax.swing.JLabel();
+        lastPanel = new javax.swing.JPanel();
+        them_btn = new javax.swing.JButton();
+        sua_btn = new javax.swing.JButton();
+        tim_txt = new javax.swing.JTextField();
+        them_txt = new javax.swing.JButton();
         nhanVienScollPanel = new javax.swing.JScrollPane();
         nhanVien_table = new javax.swing.JTable();
 
@@ -105,7 +105,7 @@ public class NhanVien_GUI extends javax.swing.JPanel {
 
         nhanVien_cbo.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         nhanVien_cbo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Nhân Viên", "Quản Lý" }));
-        nhanVien_cbo.setBorder(null);
+        nhanVien_cbo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         nhanVien_cbo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 nhanVien_cboActionPerformed(evt);
@@ -117,50 +117,46 @@ public class NhanVien_GUI extends javax.swing.JPanel {
 
         gioiTinh_cbo.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         gioiTinh_cbo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn giới tính--", "Nam", "Nữ" }));
-        gioiTinh_cbo.setBorder(null);
+        gioiTinh_cbo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
         gioiTinh_cbo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout westLayout = new javax.swing.GroupLayout(west);
         west.setLayout(westLayout);
         westLayout.setHorizontalGroup(
             westLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-            .addGroup(westLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(westLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(westLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(chucVu_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(gioiTinh_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                        .addComponent(tenNhanVien_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(maNhanVien_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
-                        .addComponent(nhanVien_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(ma_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-                        .addComponent(ten_txt)
-                        .addComponent(gioiTinh_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(westLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(westLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(chucVu_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gioiTinh_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                    .addComponent(tenNhanVien_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(maNhanVien_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE)
+                    .addComponent(nhanVien_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ma_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                    .addComponent(ten_txt)
+                    .addComponent(gioiTinh_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         westLayout.setVerticalGroup(
             westLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 294, Short.MAX_VALUE)
-            .addGroup(westLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(westLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(maNhanVien_lbl)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(ma_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(tenNhanVien_lbl)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(ten_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(chucVu_lbl)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(nhanVien_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(gioiTinh_lbl)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(gioiTinh_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+            .addGroup(westLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(maNhanVien_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ma_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tenNhanVien_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ten_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chucVu_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(nhanVien_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gioiTinh_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(gioiTinh_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         firstPanel.add(west, java.awt.BorderLayout.WEST);
@@ -207,45 +203,127 @@ public class NhanVien_GUI extends javax.swing.JPanel {
         ngayVaoLam_date.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         ngayVaoLam_date.setMaxSelectableDate(new java.util.Date(253370743282000L));
 
+        east.setBackground(new java.awt.Color(255, 255, 255));
+        east.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+
+        quanComboBox.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        quanComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn quận huyện--" }));
+        quanComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quanComboBoxActionPerformed(evt);
+            }
+        });
+
+        tinhThanh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        tinhThanh_lbl.setText("Tỉnh thành");
+
+        tinhComboBox.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        tinhComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn tỉnh thành--" }));
+
+        quanHuyen_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        quanHuyen_lbl.setText("Quận huyện");
+
+        phuongComboBox.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        phuongComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn phường xã--" }));
+        phuongComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phuongComboBoxActionPerformed(evt);
+            }
+        });
+
+        phuongXa_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        phuongXa_lbl.setText("Phường xã");
+
+        diaChi_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        diaChi_lbl.setText("Địa chỉ");
+
+        javax.swing.GroupLayout eastLayout = new javax.swing.GroupLayout(east);
+        east.setLayout(eastLayout);
+        eastLayout.setHorizontalGroup(
+            eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(eastLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eastLayout.createSequentialGroup()
+                        .addComponent(diaChi_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(105, 105, 105))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eastLayout.createSequentialGroup()
+                        .addGroup(eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(quanHuyen_lbl)
+                            .addGroup(eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(tinhComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(quanComboBox, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tinhThanh_lbl)
+                            .addComponent(phuongXa_lbl))
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eastLayout.createSequentialGroup()
+                        .addComponent(phuongComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
+        );
+        eastLayout.setVerticalGroup(
+            eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eastLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(diaChi_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tinhThanh_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(tinhComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(quanHuyen_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(quanComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(phuongXa_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(phuongComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(7, 7, 7))
+        );
+
         javax.swing.GroupLayout centerLayout = new javax.swing.GroupLayout(center);
         center.setLayout(centerLayout);
         centerLayout.setHorizontalGroup(
             centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(centerLayout.createSequentialGroup()
                 .addGroup(centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(email_lbl)
-                    .addComponent(sdt_lbl)
-                    .addComponent(ngayVaoLam_date, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ngayVaoLam_lbl)
-                    .addComponent(ngaySinh_date, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ngaySinh_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 312, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 85, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centerLayout.createSequentialGroup()
-                .addGroup(centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(sdt_txt, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(email_txt))
+                    .addComponent(sdt_txt)
+                    .addComponent(email_txt)
+                    .addComponent(sdt_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(email_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ngayVaoLam_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ngaySinh_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(centerLayout.createSequentialGroup()
+                        .addGroup(centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ngayVaoLam_date, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ngaySinh_date, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 68, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(east, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         centerLayout.setVerticalGroup(
             centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(centerLayout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(sdt_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sdt_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ngayVaoLam_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ngayVaoLam_date, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ngaySinh_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ngaySinh_date, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, centerLayout.createSequentialGroup()
+                        .addComponent(sdt_lbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(sdt_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(email_lbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(email_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ngayVaoLam_lbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ngayVaoLam_date, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ngaySinh_lbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(ngaySinh_date, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addComponent(east, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         ngayVaoLam_date.getAccessibleContext().setAccessibleDescription("");
@@ -311,7 +389,7 @@ public class NhanVien_GUI extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(sua_btn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(tim_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 809, Short.MAX_VALUE)
+                .addComponent(tim_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 792, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(them_txt)
                 .addContainerGap())
@@ -329,86 +407,6 @@ public class NhanVien_GUI extends javax.swing.JPanel {
         );
 
         firstPanel.add(lastPanel, java.awt.BorderLayout.PAGE_END);
-
-        east.setBackground(new java.awt.Color(255, 255, 255));
-        east.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-
-        quanComboBox.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        quanComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn quận huyện--" }));
-        quanComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quanComboBoxActionPerformed(evt);
-            }
-        });
-
-        tinhThanh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        tinhThanh_lbl.setText("Tỉnh thành");
-
-        tinhComboBox.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        tinhComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn tỉnh thành--" }));
-
-        quanHuyen_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        quanHuyen_lbl.setText("Quận huyện");
-
-        phuongComboBox.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        phuongComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn phường xã--" }));
-        phuongComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phuongComboBoxActionPerformed(evt);
-            }
-        });
-
-        phuongXa_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        phuongXa_lbl.setText("Phường xã");
-
-        diaChi_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        diaChi_lbl.setText("Địa chỉ");
-
-        javax.swing.GroupLayout eastLayout = new javax.swing.GroupLayout(east);
-        east.setLayout(eastLayout);
-        eastLayout.setHorizontalGroup(
-            eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(eastLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(diaChi_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(eastLayout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addGroup(eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(quanHuyen_lbl)
-                            .addComponent(quanComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(eastLayout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(tinhThanh_lbl)
-                            .addComponent(tinhComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(eastLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(phuongXa_lbl)
-                            .addComponent(phuongComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-        );
-        eastLayout.setVerticalGroup(
-            eastLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eastLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(diaChi_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tinhThanh_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tinhComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(quanHuyen_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(quanComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19)
-                .addComponent(phuongXa_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phuongComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
-        firstPanel.add(east, java.awt.BorderLayout.EAST);
 
         add(firstPanel, java.awt.BorderLayout.PAGE_START);
 

@@ -5,6 +5,8 @@
 package GUI;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
+import com.formdev.flatlaf.FlatLightLaf;
 
 /**
  *
@@ -376,6 +378,11 @@ public class TrangChu_GUI extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(TrangChu_GUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        try {
+            UIManager.setLookAndFeel(new FlatLightLaf());
+        } catch (Exception e){
+            e.printStackTrace();
+        }
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {

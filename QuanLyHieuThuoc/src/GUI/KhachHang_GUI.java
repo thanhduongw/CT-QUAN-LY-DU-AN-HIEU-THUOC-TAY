@@ -5,10 +5,7 @@
 package GUI;
 
 import java.awt.Color;
-import java.io.File;
 import java.io.FileReader;
-import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -28,10 +25,6 @@ public class KhachHang_GUI extends javax.swing.JPanel {
         initComponents();
         loadData();  // Tải dữ liệu từ file JSON khi khởi tạo
         loadTinhComboBox();  // Hiển thị dữ liệu vào tinhComboBox
-        jDialog_them.setSize(600, 450); // Set the size of the dialog
-        jDialog_them.setLocationRelativeTo(null); // Center the dialog on the screen
-        jDialog_them.setModal(true); // Make the dialog modal if needed
-        fileChoser.setSize(600, 450); // Set the size of the dialogSS
     }
 
     /**
@@ -44,26 +37,6 @@ public class KhachHang_GUI extends javax.swing.JPanel {
     private void initComponents() {
 
         jDialog_them = new javax.swing.JDialog();
-        ten_txt = new javax.swing.JTextField();
-        themKH_btn = new javax.swing.JButton();
-        thongTinKhachHang_lbl = new javax.swing.JLabel();
-        ten_lbl = new javax.swing.JLabel();
-        sdt_txt = new javax.swing.JTextField();
-        sdt_lbl = new javax.swing.JLabel();
-        ngaySinh_date = new com.toedter.calendar.JDateChooser();
-        ngaySinh_lbl = new javax.swing.JLabel();
-        diaChiPanel = new javax.swing.JPanel();
-        quanComboBox = new javax.swing.JComboBox<>();
-        tinhThanh_lbl = new javax.swing.JLabel();
-        tinhComboBox = new javax.swing.JComboBox<>();
-        quanHuyen_lbl = new javax.swing.JLabel();
-        phuongComboBox = new javax.swing.JComboBox<>();
-        phuongXa_lbl = new javax.swing.JLabel();
-        diaChi_lbl = new javax.swing.JLabel();
-        gioiTinh_lbl = new javax.swing.JLabel();
-        gioiTinh_cbo = new javax.swing.JComboBox<>();
-        themThuoc_btn1 = new javax.swing.JButton();
-        fileChoser = new javax.swing.JFileChooser();
         khachHangPanel = new javax.swing.JPanel();
         quanLy = new javax.swing.JLabel();
         khachHangScollPane = new javax.swing.JScrollPane();
@@ -71,206 +44,38 @@ public class KhachHang_GUI extends javax.swing.JPanel {
         north = new javax.swing.JPanel();
         quanLyKhachHang_lbl = new javax.swing.JLabel();
         tim_txt = new javax.swing.JTextField();
-        themcsv_btn = new javax.swing.JButton();
+        xuat_csv_btn = new javax.swing.JButton();
         tim_btn = new javax.swing.JButton();
-        them_btn = new javax.swing.JButton();
+        themPanel = new javax.swing.JPanel();
+        ten_txt = new javax.swing.JTextField();
+        thongTinKhachHang_lbl = new javax.swing.JLabel();
+        ten_lbl = new javax.swing.JLabel();
+        sdt_txt = new javax.swing.JTextField();
+        sdt_lbl = new javax.swing.JLabel();
+        ngaySinh_date = new com.toedter.calendar.JDateChooser();
+        ngaySinh_lbl = new javax.swing.JLabel();
+        gioiTinh_lbl = new javax.swing.JLabel();
+        gioiTinh_cbo = new javax.swing.JComboBox<>();
+        tinhComboBox = new javax.swing.JComboBox<>();
+        tinhThanh_lbl = new javax.swing.JLabel();
+        quanComboBox = new javax.swing.JComboBox<>();
+        phuongComboBox = new javax.swing.JComboBox<>();
+        quanHuyen_lbl = new javax.swing.JLabel();
+        phuongXa_lbl = new javax.swing.JLabel();
+        themKH_btn = new javax.swing.JButton();
+        themKH_btn1 = new javax.swing.JButton();
 
         jDialog_them.setTitle("Thêm nhân viên");
         jDialog_them.setBackground(new java.awt.Color(255, 255, 255));
         jDialog_them.setForeground(new java.awt.Color(255, 255, 255));
 
-        ten_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ten_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ten_txtActionPerformed(evt);
-            }
-        });
-
-        themKH_btn.setBackground(new java.awt.Color(77, 189, 116));
-        themKH_btn.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        themKH_btn.setForeground(new java.awt.Color(255, 255, 255));
-        themKH_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\plus-24.png")); // NOI18N
-        themKH_btn.setText("Thêm");
-        themKH_btn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                themKH_btnActionPerformed(evt);
-            }
-        });
-
-        thongTinKhachHang_lbl.setBackground(new java.awt.Color(255, 255, 255));
-        thongTinKhachHang_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
-        thongTinKhachHang_lbl.setText("Thông tin khách hàng");
-
-        ten_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ten_lbl.setText("Tên khách hàng");
-
-        sdt_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        sdt_txt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sdt_txtActionPerformed(evt);
-            }
-        });
-
-        sdt_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        sdt_lbl.setText("Điện thoại");
-
-        ngaySinh_date.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        ngaySinh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        ngaySinh_lbl.setText("Ngày sinh");
-
-        diaChiPanel.setBackground(new java.awt.Color(255, 255, 255));
-        diaChiPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        diaChiPanel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-
-        quanComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        quanComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn quận huyện--" }));
-        quanComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                quanComboBoxActionPerformed(evt);
-            }
-        });
-
-        tinhThanh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tinhThanh_lbl.setText("Tỉnh thành");
-
-        tinhComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        tinhComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn tỉnh thành--" }));
-
-        quanHuyen_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        quanHuyen_lbl.setText("Quận huyện");
-
-        phuongComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        phuongComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn phường xã--" }));
-        phuongComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                phuongComboBoxActionPerformed(evt);
-            }
-        });
-
-        phuongXa_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        phuongXa_lbl.setText("Phường xã");
-
-        diaChi_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        diaChi_lbl.setText("Địa chỉ");
-
-        javax.swing.GroupLayout diaChiPanelLayout = new javax.swing.GroupLayout(diaChiPanel);
-        diaChiPanel.setLayout(diaChiPanelLayout);
-        diaChiPanelLayout.setHorizontalGroup(
-            diaChiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(diaChiPanelLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(diaChiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaChiPanelLayout.createSequentialGroup()
-                        .addComponent(tinhThanh_lbl)
-                        .addGap(269, 269, 269))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaChiPanelLayout.createSequentialGroup()
-                        .addComponent(phuongXa_lbl)
-                        .addGap(268, 268, 268))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaChiPanelLayout.createSequentialGroup()
-                        .addComponent(quanHuyen_lbl)
-                        .addGap(258, 258, 258))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaChiPanelLayout.createSequentialGroup()
-                        .addGroup(diaChiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(tinhComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(diaChiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(quanComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, 225, Short.MAX_VALUE)
-                                .addComponent(phuongComboBox, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(diaChi_lbl, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(131, 131, 131))))
-        );
-        diaChiPanelLayout.setVerticalGroup(
-            diaChiPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, diaChiPanelLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(diaChi_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tinhThanh_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tinhComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(quanHuyen_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(quanComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(phuongXa_lbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phuongComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        gioiTinh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        gioiTinh_lbl.setText("Giới tính");
-
-        gioiTinh_cbo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        gioiTinh_cbo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn giới tính--", "Nam", "Nữ" }));
-        gioiTinh_cbo.setBorder(null);
-        gioiTinh_cbo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        gioiTinh_cbo.setPreferredSize(new java.awt.Dimension(80, 22));
-
-        themThuoc_btn1.setBackground(new java.awt.Color(189, 189, 189));
-        themThuoc_btn1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        themThuoc_btn1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\Github-Octicons-X-16.24.png")); // NOI18N
-        themThuoc_btn1.setText("Hủy");
-
         javax.swing.GroupLayout jDialog_themLayout = new javax.swing.GroupLayout(jDialog_them.getContentPane());
         jDialog_them.getContentPane().setLayout(jDialog_themLayout);
         jDialog_themLayout.setHorizontalGroup(
             jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog_themLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addGroup(jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ten_lbl)
-                    .addComponent(diaChiPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ten_txt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(sdt_txt)
-                    .addComponent(sdt_lbl)
-                    .addComponent(ngaySinh_lbl)
-                    .addComponent(ngaySinh_date, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(gioiTinh_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gioiTinh_cbo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jDialog_themLayout.createSequentialGroup()
-                        .addComponent(themThuoc_btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(themKH_btn)))
-                .addGap(17, 17, 17))
-            .addGroup(jDialog_themLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(thongTinKhachHang_lbl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jDialog_themLayout.setVerticalGroup(
             jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jDialog_themLayout.createSequentialGroup()
-                .addComponent(thongTinKhachHang_lbl)
-                .addGap(18, 18, 18)
-                .addGroup(jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ten_lbl)
-                    .addComponent(sdt_lbl))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ten_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sdt_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jDialog_themLayout.createSequentialGroup()
-                        .addComponent(diaChiPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jDialog_themLayout.createSequentialGroup()
-                        .addComponent(ngaySinh_lbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ngaySinh_date, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(gioiTinh_lbl)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(gioiTinh_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jDialog_themLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(themKH_btn, javax.swing.GroupLayout.DEFAULT_SIZE, 55, Short.MAX_VALUE)
-                            .addComponent(themThuoc_btn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(30, 30, 30))))
         );
 
         setBackground(new java.awt.Color(255, 255, 255));
@@ -302,13 +107,10 @@ public class KhachHang_GUI extends javax.swing.JPanel {
         khachHangPanel.setLayout(khachHangPanelLayout);
         khachHangPanelLayout.setHorizontalGroup(
             khachHangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(khachHangPanelLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, khachHangPanelLayout.createSequentialGroup()
                 .addGroup(khachHangPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(khachHangPanelLayout.createSequentialGroup()
-                        .addComponent(quanLy, javax.swing.GroupLayout.PREFERRED_SIZE, 1081, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 44, Short.MAX_VALUE))
-                    .addComponent(khachHangScollPane))
+                    .addComponent(khachHangScollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1023, Short.MAX_VALUE)
+                    .addComponent(quanLy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         khachHangPanelLayout.setVerticalGroup(
@@ -323,6 +125,8 @@ public class KhachHang_GUI extends javax.swing.JPanel {
         quanLy.getAccessibleContext().setAccessibleDescription("");
 
         add(khachHangPanel, java.awt.BorderLayout.CENTER);
+
+        north.setBackground(new java.awt.Color(255, 255, 255));
 
         quanLyKhachHang_lbl.setBackground(new java.awt.Color(255, 255, 255));
         quanLyKhachHang_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
@@ -343,14 +147,14 @@ public class KhachHang_GUI extends javax.swing.JPanel {
             }
         });
 
-        themcsv_btn.setBackground(new java.awt.Color(72, 160, 255));
-        themcsv_btn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        themcsv_btn.setForeground(new java.awt.Color(255, 255, 255));
-        themcsv_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\Fatcow-Farm-Fresh-Page-white-excel.24.png")); // NOI18N
-        themcsv_btn.setText("Thêm từ excel");
-        themcsv_btn.addActionListener(new java.awt.event.ActionListener() {
+        xuat_csv_btn.setBackground(new java.awt.Color(72, 160, 255));
+        xuat_csv_btn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        xuat_csv_btn.setForeground(new java.awt.Color(255, 255, 255));
+        xuat_csv_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\Fatcow-Farm-Fresh-Page-white-excel.24.png")); // NOI18N
+        xuat_csv_btn.setText("Xuất file excel");
+        xuat_csv_btn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                themcsv_btnActionPerformed(evt);
+                xuat_csv_btnActionPerformed(evt);
             }
         });
 
@@ -366,46 +170,202 @@ public class KhachHang_GUI extends javax.swing.JPanel {
             }
         });
 
-        them_btn.setBackground(new java.awt.Color(199, 199, 199));
-        them_btn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        them_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\Microsoft-Fluentui-Emoji-Mono-Plus.24.png")); // NOI18N
-        them_btn.setText("Thêm khách hàng");
-        them_btn.addActionListener(new java.awt.event.ActionListener() {
+        themPanel.setBackground(new java.awt.Color(255, 255, 255));
+
+        ten_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ten_txt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                them_btnActionPerformed(evt);
+                ten_txtActionPerformed(evt);
             }
         });
+
+        thongTinKhachHang_lbl.setBackground(new java.awt.Color(255, 255, 255));
+        thongTinKhachHang_lbl.setFont(new java.awt.Font("Segoe UI Semibold", 0, 20)); // NOI18N
+        thongTinKhachHang_lbl.setText("Thông tin khách hàng");
+
+        ten_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ten_lbl.setText("Tên khách hàng");
+
+        sdt_txt.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        sdt_txt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sdt_txtActionPerformed(evt);
+            }
+        });
+
+        sdt_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        sdt_lbl.setText("Điện thoại");
+
+        ngaySinh_date.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+
+        ngaySinh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        ngaySinh_lbl.setText("Ngày sinh");
+
+        gioiTinh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        gioiTinh_lbl.setText("Giới tính");
+
+        gioiTinh_cbo.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        gioiTinh_cbo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn giới tính--", "Nam", "Nữ" }));
+        gioiTinh_cbo.setBorder(javax.swing.BorderFactory.createTitledBorder(""));
+        gioiTinh_cbo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        gioiTinh_cbo.setPreferredSize(new java.awt.Dimension(80, 22));
+
+        tinhComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tinhComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn tỉnh thành--" }));
+
+        tinhThanh_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        tinhThanh_lbl.setText("Tỉnh thành");
+
+        quanComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        quanComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn quận huyện--" }));
+        quanComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                quanComboBoxActionPerformed(evt);
+            }
+        });
+
+        phuongComboBox.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        phuongComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Chọn phường xã--" }));
+        phuongComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                phuongComboBoxActionPerformed(evt);
+            }
+        });
+
+        quanHuyen_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        quanHuyen_lbl.setText("Quận huyện");
+
+        phuongXa_lbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        phuongXa_lbl.setText("Phường xã");
+
+        themKH_btn.setBackground(new java.awt.Color(77, 189, 116));
+        themKH_btn.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        themKH_btn.setForeground(new java.awt.Color(255, 255, 255));
+        themKH_btn.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\plus-24.png")); // NOI18N
+        themKH_btn.setText("Thêm khách hàng");
+        themKH_btn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themKH_btnActionPerformed(evt);
+            }
+        });
+
+        themKH_btn1.setBackground(new java.awt.Color(189, 189, 189));
+        themKH_btn1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        themKH_btn1.setIcon(new javax.swing.ImageIcon("C:\\Users\\nguye\\NetBeansProjects\\CT-QUAN-LY-DU-AN-HIEU-THUOC-TAY\\QuanLyHieuThuoc\\image\\Github-Octicons-X-16.24.png")); // NOI18N
+        themKH_btn1.setText("Xóa thông tin khách hàng");
+        themKH_btn1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                themKH_btn1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout themPanelLayout = new javax.swing.GroupLayout(themPanel);
+        themPanel.setLayout(themPanelLayout);
+        themPanelLayout.setHorizontalGroup(
+            themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(themPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(thongTinKhachHang_lbl)
+                    .addGroup(themPanelLayout.createSequentialGroup()
+                        .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(ten_txt)
+                            .addComponent(ten_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sdt_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(sdt_txt)
+                            .addComponent(quanHuyen_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(quanComboBox, 0, 350, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(phuongXa_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(phuongComboBox, 0, 349, Short.MAX_VALUE)
+                            .addComponent(ngaySinh_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tinhThanh_lbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tinhComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ngaySinh_date, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addGap(18, 18, 18)
+                .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(gioiTinh_cbo, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gioiTinh_lbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(themKH_btn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(themKH_btn1, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        themPanelLayout.setVerticalGroup(
+            themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(themPanelLayout.createSequentialGroup()
+                .addComponent(thongTinKhachHang_lbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ten_lbl)
+                    .addComponent(ngaySinh_lbl)
+                    .addComponent(gioiTinh_lbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ten_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(ngaySinh_date, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(gioiTinh_cbo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(themPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sdt_lbl)
+                            .addComponent(tinhThanh_lbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(sdt_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(tinhComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(quanHuyen_lbl)
+                            .addComponent(phuongXa_lbl))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(themPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(quanComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(phuongComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(themPanelLayout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(themKH_btn1, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(themKH_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout northLayout = new javax.swing.GroupLayout(north);
         north.setLayout(northLayout);
         northLayout.setHorizontalGroup(
             northLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, northLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(tim_txt, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tim_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(them_btn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(themcsv_btn)
-                .addGap(7, 7, 7))
             .addGroup(northLayout.createSequentialGroup()
-                .addComponent(quanLyKhachHang_lbl)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGroup(northLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(northLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(tim_txt)
+                        .addGap(18, 18, 18)
+                        .addComponent(tim_btn, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(xuat_csv_btn))
+                    .addGroup(northLayout.createSequentialGroup()
+                        .addComponent(quanLyKhachHang_lbl)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(themPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         northLayout.setVerticalGroup(
             northLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, northLayout.createSequentialGroup()
+            .addGroup(northLayout.createSequentialGroup()
                 .addComponent(quanLyKhachHang_lbl)
                 .addGap(13, 13, 13)
                 .addGroup(northLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(tim_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(northLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(them_btn)
-                        .addComponent(themcsv_btn)
-                        .addComponent(tim_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+                    .addGroup(northLayout.createSequentialGroup()
+                        .addGroup(northLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(tim_btn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(xuat_csv_btn))
+                        .addGap(7, 7, 7))
+                    .addGroup(northLayout.createSequentialGroup()
+                        .addComponent(tim_txt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addComponent(themPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         add(north, java.awt.BorderLayout.PAGE_START);
@@ -419,45 +379,10 @@ public class KhachHang_GUI extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_tim_btnActionPerformed
 
-    private void themcsv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themcsv_btnActionPerformed
+    private void xuat_csv_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xuat_csv_btnActionPerformed
         // TODO add your handling code here:
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("CSV Files", "csv");
-        fileChoser.setFileFilter(filter);
-        fileChoser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-        int result = fileChoser.showOpenDialog(this);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            // Lấy đường dẫn file được chọn
-            File selectedFile = fileChoser.getSelectedFile();
-            System.out.println(selectedFile.getAbsolutePath());
-        } else {
-            System.out.println("User cancel");
-        }
-    }//GEN-LAST:event_themcsv_btnActionPerformed
 
-    private void them_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_them_btnActionPerformed
-        // TODO add your handling code here:
-        jDialog_them.setVisible(true);
-    }//GEN-LAST:event_them_btnActionPerformed
-
-    private void ten_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ten_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ten_txtActionPerformed
-
-    private void themKH_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themKH_btnActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_themKH_btnActionPerformed
-
-    private void sdt_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sdt_txtActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_sdt_txtActionPerformed
-
-    private void quanComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quanComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_quanComboBoxActionPerformed
-
-    private void phuongComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phuongComboBoxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_phuongComboBoxActionPerformed
+    }//GEN-LAST:event_xuat_csv_btnActionPerformed
 
     private void tim_txtFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_tim_txtFocusGained
         // TODO add your handling code here:
@@ -467,11 +392,32 @@ public class KhachHang_GUI extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tim_txtFocusGained
 
+    private void themKH_btnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themKH_btnActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_themKH_btnActionPerformed
+
+    private void phuongComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_phuongComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_phuongComboBoxActionPerformed
+
+    private void quanComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_quanComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_quanComboBoxActionPerformed
+
+    private void sdt_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sdt_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sdt_txtActionPerformed
+
+    private void ten_txtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ten_txtActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ten_txtActionPerformed
+
+    private void themKH_btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_themKH_btn1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_themKH_btn1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel diaChiPanel;
-    private javax.swing.JLabel diaChi_lbl;
-    private javax.swing.JFileChooser fileChoser;
     private javax.swing.JComboBox<String> gioiTinh_cbo;
     private javax.swing.JLabel gioiTinh_lbl;
     private javax.swing.JDialog jDialog_them;
@@ -492,14 +438,14 @@ public class KhachHang_GUI extends javax.swing.JPanel {
     private javax.swing.JLabel ten_lbl;
     private javax.swing.JTextField ten_txt;
     private javax.swing.JButton themKH_btn;
-    private javax.swing.JButton themThuoc_btn1;
-    private javax.swing.JButton them_btn;
-    private javax.swing.JButton themcsv_btn;
+    private javax.swing.JButton themKH_btn1;
+    private javax.swing.JPanel themPanel;
     private javax.swing.JLabel thongTinKhachHang_lbl;
     private javax.swing.JButton tim_btn;
     private javax.swing.JTextField tim_txt;
     private javax.swing.JComboBox<String> tinhComboBox;
     private javax.swing.JLabel tinhThanh_lbl;
+    private javax.swing.JButton xuat_csv_btn;
     // End of variables declaration//GEN-END:variables
     
     private void loadData() {
